@@ -33,7 +33,7 @@ const { CancelToken } = axios
 const source = CancelToken.source()
 const debounceHandler = () => {
   return {
-    async requestResolve(config: AxiosRequestConfig) {
+    requestResolve(config: AxiosRequestConfig) {
       const { debounce = true } = config as RequestConfig
       if (debounce) {
         const { url, method, params, data } = config as RequestConfig
